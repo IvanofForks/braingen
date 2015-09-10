@@ -1,6 +1,6 @@
 // Copyright (c) 2015 The braingen developers
 // Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// file LICENSE or http://www.opensource.org/licenses/mit-license.php.
 
 #include <iostream>
 #include <openssl/evp.h>
@@ -15,7 +15,7 @@ using namespace std;
 
 static void ShowUsage()
 {
-    cerr << "Usage: braingen [-s][-a algorithm][-i iterations][-v]\n"
+    cerr << "Usage: braingen [-t][-s][-a algorithm][-i iterations][-v]\n"
             << "Options:\n"
             << "  -t\tTestnet"
             << "  -s\tGenerate a private key based on a single SHA-256 round (NOT RECOMMENDED)\n"
@@ -89,6 +89,8 @@ int main(int argc, char* argv[])
     {
         string passphrase;
 
+        cout << "Generating a private key based on a single SHA-256 hash..." << endl;
+
         if (!displayPassphases)
             SetStdinEcho(false);
 
@@ -104,6 +106,8 @@ int main(int argc, char* argv[])
     else
     {
         string passphrase, salt, tmp;
+
+        cout << "Generating a private key based on " << iterations << " of PBKDF2 with the " << algo << " algorithm..." << endl;
 
         if (!displayPassphases)
             SetStdinEcho(false);

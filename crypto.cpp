@@ -36,11 +36,3 @@ string ByteArrayToString(unsigned char* data, size_t length)
 
     return ss.str();
 }
-
-void PBKDF2_HMAC_SHA_256(const char* pass, const unsigned char* salt, int iterations, int outputBytes, unsigned char* digest)
-{
-    //unsigned char digest[outputBytes];
-    PKCS5_PBKDF2_HMAC(pass, sizeof(pass), salt, sizeof(salt), iterations, EVP_sha256(), outputBytes, digest);
-
-    //memcpy(result, digest, outputBytes);
-}
