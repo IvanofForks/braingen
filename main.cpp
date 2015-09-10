@@ -17,10 +17,10 @@ static void ShowUsage()
 {
     cerr << "Usage: braingen [-t][-s][-a algorithm][-i iterations][-v]\n"
             << "Options:\n"
-            << "  -t\tTestnet"
+            << "  -t\tTestnet\n"
             << "  -s\tGenerate a private key based on a single SHA-256 round (NOT RECOMMENDED)\n"
             << "  -a\tUse a specific hash algorithm for the KDF, one of: RIPEMD160, SHA256, SHA512. Default is SHA256\n"
-            << "  -i\tSpecify the number of PBKDF2 iterations. Default is 200 000"
+            << "  -i\tSpecify the number of PBKDF2 iterations. Default is 200 000\n"
             << "  -v\tDisplay passphrases"
             << endl;
 }
