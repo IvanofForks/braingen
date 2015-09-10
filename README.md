@@ -6,9 +6,15 @@ The use of a robust key derivation function with plenty of iterations and a salt
 
 # Usage
 Usage: braingen [-t][-s][-a algorithm][-i iterations][-v]
+
 Options:
+
   -t	Testnet
+  
   -s	Generate a private key based on a single SHA-256 round (NOT RECOMMENDED)
+  
   -a	Use a specific hash algorithm for the KDF, one of: RIPEMD160, SHA256, SHA512. Default is SHA256
+  
   -i	Specify the number of PBKDF2 iterations. Default is 200 000
+  
   -v	Display passphrases
